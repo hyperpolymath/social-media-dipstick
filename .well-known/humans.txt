@@ -1,0 +1,80 @@
+/* TEAM */
+
+Project Lead: Jonathan (NUJ)
+Repository: https://github.com/Hyperpolymath/social-media-dipstick
+Location: United Kingdom
+
+Infrastructure Developer: Claude (Anthropic AI)
+Role: Initial codebase architecture and implementation
+Twitter: @AnthropicAI
+Site: https://anthropic.com
+
+/* THANKS */
+
+National Union of Journalists (NUJ)
+- Funding and project vision
+- Democratic Motion mandate
+- Communications team collaboration
+
+Open Source Community:
+- Rust community (collector service)
+- Python community (analyzer service)
+- Elixir community (dashboard service)
+- Node.js community (publisher service)
+- Julia community (scraper service)
+- Ada community (TUI service)
+- Clojure community (XTDB adapter)
+
+Database Communities:
+- Virtuoso Open-Source team
+- XTDB (Juxt) team
+- DragonflyDB team
+- PostgreSQL community
+- TimescaleDB team
+
+/* TECHNOLOGY */
+
+Languages: Rust, Python, Elixir, Node.js, Julia, Ada, Clojure, CUE, Nickel
+Databases: Virtuoso RDF, XTDB, Dragonfly, PostgreSQL, TimescaleDB
+Infrastructure: Podman, Prometheus, Grafana, Loki
+Standards: RFC 9116 (security.txt), OpenAPI, GraphQL, SPARQL
+
+/* SITE */
+
+Main: https://github.com/Hyperpolymath/social-media-dipstick
+Documentation: https://github.com/Hyperpolymath/social-media-dipstick/blob/main/README.md
+Architecture: https://github.com/Hyperpolymath/social-media-dipstick/blob/main/ARCHITECTURE.md
+Contributing: https://github.com/Hyperpolymath/social-media-dipstick/blob/main/CONTRIBUTING.md
+Security: https://github.com/Hyperpolymath/social-media-dipstick/blob/main/SECURITY.md
+
+/* STANDARDS */
+
+RSR Compliance: Bronze Level (60%)
+TPCF: Perimeter 3 (Community Sandbox)
+License: GPL-3.0
+AI Policy: Restrictive (see .well-known/ai.txt)
+
+/* PURPOSE */
+
+Mission: Automated monitoring of social media platform policies
+Goal: Protect journalists from policy changes that impact their work
+Benefit: £47,600/year net value to NUJ members
+Impact: <10 minutes/day human oversight vs. hours/week manual monitoring
+
+/* ATTRIBUTION */
+
+This project was built with:
+- Democratic mandate from NUJ members
+- Union values: worker protection, collective action
+- Open source principles: transparency, collaboration
+- Ethical AI: human-in-the-loop, safety guardrails
+
+For journalists, by journalists, with journalists.
+
+/* CONTACT */
+
+Issues: https://github.com/Hyperpolymath/social-media-dipstick/issues
+Email: monitor@nuj.org.uk
+Security: security@nuj.org.uk
+
+/* EOF */
