@@ -36,59 +36,98 @@ Monitor social media platform policy changes and deliver 6-monthly guidance to N
 5. Zero/negative budget
 6. Lightest touch supervision, clear guardrails
 
-## Technology Stack
+## Technology Stack v2.0
 
-### Microservices Architecture (Podman)
-- **Collector Service** (Rust): Platform scraping, API monitoring, change detection
-- **Analyzer Service** (Python): NLP, impact assessment, guidance generation
-- **Dashboard Service** (Elixir/Phoenix): Real-time monitoring, approval workflows
-- **Publisher Service** (Node.js): Email delivery, rollback, analytics
+**Architecture**: ReScript + WASM + Deno + Rust + AI Agent Swarms
+**NO Python, NO TypeScript, NO Node.js** - Pure functional + systems programming
 
-### Data Layer
-- **PostgreSQL**: Core data storage
-- **TimescaleDB**: Time-series policy changes
-- **Redis**: Caching, job queues
+### Core Services (Podman orchestration)
+- **Collector Service** (Rust): Platform monitoring, SHA256 change detection, WASM plugins
+- **Analyzer Service** (ReScript + Deno + WASM): Type-safe NLP with Rust WASM modules for performance
+- **Dashboard Service** (Elixir/Phoenix): Real-time LiveView monitoring, approval workflows
+- **Publisher Service** (Deno): Email delivery with 19-layer safety guardrails
+- **GraphQL Gateway** (ReScript + Deno): Federated API layer, type-safe schema stitching
+
+### AI Intelligence Layer
+- **Agent Swarm** (Deno + LangChain): 7 specialized AI agents (Policy Analyst, Severity Assessor, Guidance Writer, PESTLE Analyst, Fact Checker, Member Impact Evaluator, Coordinator)
+- **PESTLE Observatory** (Deno): Connects to 6 external GraphQL sources (GDPR Observatory, IFEX, Ranking Digital Rights, Article 19, Index on Censorship, Tech Policy Lab)
+
+### Advanced Services
+- **Julia Scraper**: Massively parallel (1000+ concurrent connections)
+- **XTDB Temporal Adapter** (Clojure): Bitemporal queries, audit trails
+- **Ada TUI**: Type-safe configuration interface
+
+### Data Layer (4 specialized databases)
+- **PostgreSQL + TimescaleDB**: Core transactional data, time-series hypertables
+- **Virtuoso RDF**: PESTLE semantic intelligence, SPARQL endpoint
+- **XTDB**: Bitemporal audit trail (valid-time + transaction-time)
+- **Dragonfly**: High-performance cache (25x faster than Redis)
 
 ### Infrastructure
-- **Podman**: Container orchestration (Windows Enterprise compatible)
+- **Podman**: Rootless containers (14 services orchestrated)
+- **WASM**: AOT-compiled NLP (10-100x faster than interpreted)
+- **Deno**: Secure-by-default runtime (explicit permissions)
 - **GitHub Actions**: CI/CD pipeline
-- **Monitoring**: Prometheus + Grafana
+- **Monitoring**: Prometheus + Grafana + Loki
 
 **Why This Stack**:
-- Isolated failures (one service down ≠ system down)
-- Independent scaling (spike in analysis ≠ collector slowdown)
-- Modern tech portfolio value for ICT team
-- Minimal maintenance burden
+- **Type Safety**: ReScript (sound), Rust (borrow checker), Ada (SPARK proofs)
+- **Performance**: WASM AOT compilation, Dragonfly cache, Julia parallelism
+- **Security**: Deno permissions, Podman rootless, sandboxed WASM
+- **AI Intelligence**: Multi-agent swarms, PESTLE external observatories
+- **Maintainability**: Functional programming, no runtime exceptions
+- **Modern Portfolio**: Cutting-edge tech stack valuable for ICT team
 
 ## Project Structure
 
 ```
 social-media-dipstick/
 ├── services/
-│   ├── collector/        # Rust: Platform monitoring
-│   ├── analyzer/         # Python: NLP & impact assessment
-│   ├── dashboard/        # Elixir/Phoenix: Web UI
-│   └── publisher/        # Node.js: Communication delivery
+│   ├── collector/                # Rust: Platform monitoring, WASM plugins
+│   ├── analyzer-rescript/        # ReScript + Deno + WASM: Type-safe NLP
+│   │   ├── src/                  # ReScript source (compiles to .bs.js)
+│   │   └── wasm/                 # Rust WASM modules (sentiment, extraction)
+│   ├── gateway-rescript/         # ReScript + Deno: GraphQL federation
+│   ├── dashboard/                # Elixir/Phoenix: Real-time LiveView UI
+│   ├── publisher-deno/           # Deno: Email delivery, 19 guardrails
+│   ├── agent-swarm/              # Deno: AI multi-agent coordination
+│   │   ├── src/swarm.ts          # Agent swarm coordinator
+│   │   └── agents/               # Individual agent definitions
+│   ├── pestle-observatory/       # Deno: External GraphQL federation
+│   ├── scraper-julia/            # Julia: Massively parallel scraping
+│   ├── xtdb-temporal/            # Clojure: Bitemporal query adapter
+│   └── tui-ada/                  # Ada: Type-safe configuration TUI
 ├── shared/
-│   ├── schemas/          # API contracts, OpenAPI specs
-│   ├── libraries/        # Shared utilities
-│   └── types/            # Common data models
+│   ├── schemas/                  # API contracts, OpenAPI, GraphQL schemas
+│   ├── libraries/                # Shared utilities
+│   └── types/                    # Common data models (ReScript, Rust)
 ├── infrastructure/
-│   ├── database/         # Schema, migrations
-│   ├── containers/       # Podman configs
-│   └── monitoring/       # Observability setup
+│   ├── database/                 # PostgreSQL, TimescaleDB schemas
+│   │   ├── virtuoso/             # RDF ontologies, SPARQL queries
+│   │   └── xtdb/                 # Temporal database config
+│   ├── containers/               # Podman compose (standard + enhanced)
+│   └── monitoring/               # Prometheus, Grafana, Loki configs
+├── config/
+│   ├── cue/                      # CUE schema validation scripts
+│   ├── nlp_tuning.ncl            # Nickel self-tuning config
+│   └── observatories/            # External GraphQL endpoints
 ├── tools/
-│   ├── cli/              # Development & ops tools
-│   └── scripts/          # Automation utilities
+│   ├── cli/                      # Development & ops tools
+│   ├── scripts/                  # Automation utilities
+│   └── autoconfig/               # SMTP, GraphQL autoconfiguration
 ├── docs/
-│   ├── architecture/     # System design
-│   ├── api/              # API documentation
-│   └── user-guides/      # End-user documentation
+│   ├── architecture/             # System design (ARCHITECTURE.md)
+│   ├── api/                      # GraphQL schema, REST endpoints
+│   └── user-guides/              # End-user documentation
 ├── tests/
-│   ├── integration/      # Cross-service tests
-│   └── e2e/              # End-to-end scenarios
-└── .github/
-    └── workflows/        # CI/CD pipelines
+│   ├── integration/              # Cross-service tests
+│   └── e2e/                      # End-to-end scenarios
+├── .well-known/                  # RFC 9116 (security.txt, ai.txt, humans.txt)
+├── .github/
+│   └── workflows/                # CI/CD pipelines
+├── ARCHITECTURE.md               # Deep technical documentation
+├── RSR_COMPLIANCE.md             # 86% Gold level compliance
+└── justfile                      # Build automation (53+ recipes)
 ```
 
 ## Safety Guardrails (19 Layers)
